@@ -42,6 +42,18 @@ class SitemapLiteAdminController extends SitemapLite
 			}
 		}
 		
+		// Exclude user specified menu IDs.
+		$config->mid_exclusions = array();
+		$mid_exclusions = explode("\n", $vars->sitemaplite_mid_exclusions);
+		foreach ($mid_exclusions as $mid_exclusion)
+		{
+			$mid_exclusion = trim($mid_exclusion);
+			if ($mid_exclusion)
+			{
+				$config->mid_exclusions[] = $mid_exclusion;
+			}
+		}
+		
 		// Load document config
 		$config->document_count = intval($vars->sitemaplite_document_count);
 		if ($config->document_count < 0)
@@ -153,6 +165,13 @@ class SitemapLiteAdminController extends SitemapLite
 			foreach ($menu_items->data as $item)
 			{
 				if (intval($item->group_srls) !== 0 && $config->only_public_menus !== false)
+				{
+					continue;
+				}
+				
+				// Exclude user specified menu IDs.
+				$menu_info = $oMenuAdminModel->getMenuItemInfo($item->menu_item_srl);
+				if ($menu_info && $menu_info->url && in_array($menu_info->url, $config->mid_exclusions))
 				{
 					continue;
 				}
@@ -402,8 +421,8 @@ class SitemapLiteAdminController extends SitemapLite
 	protected function _pingSearchEngines($url, $search_engines = array())
 	{
 		$pings = array(
-			'google' => 'http://www.google.com/webmasters/sitemaps/ping?sitemap=%s',
-			'bing' => 'http://www.bing.com/ping?sitemap=%s',
+			'google' => 'https://www.google.com/webmasters/sitemaps/ping?sitemap=%s',
+			'bing' => 'https://www.bing.com/ping?sitemap=%s',
 		);
 		
 		$config = array('ssl_verify_host' => false);

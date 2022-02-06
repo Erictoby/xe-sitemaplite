@@ -23,6 +23,12 @@ class SitemapLiteAdminView extends SitemapLite
 			$config->menu_srls = array($index_menu_srl);
 		}
 		
+		// Initialize menu exclusion list.
+		if (!isset($config->mid_exclusions))
+		{
+			$config->mid_exclusions = array();
+		}
+		
 		// Automatically select the sitemap file path.
 		if (!isset($config->sitemap_file_path))
 		{

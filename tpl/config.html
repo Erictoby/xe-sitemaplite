@@ -126,6 +126,14 @@
 				<p class="x_help-block">{$lang->cmd_sitemaplite_about_only_public_menus}</p>
 			</div>
 		</div>
+		
+		<div class="x_control-group">
+			<label class="x_control-label" for="sitemaplite_mid_exclusions">{$lang->cmd_sitemaplite_mid_exclusions}</label>
+			<div class="x_controls">
+				<textarea class="mid_exclusions" name="sitemaplite_mid_exclusions" id="sitemaplite_mid_exclusions" rows="{min(16, count($sitemaplite_config->mid_exclusions) + 2)}">{htmlspecialchars(implode("\n", $sitemaplite_config->mid_exclusions))}</textarea>
+				<p class="x_help-block">{$lang->cmd_sitemaplite_about_mid_exclusions}</p>
+			</div>
+		</div>
 	
 		<div class="x_control-group">
 			<label class="x_control-label" for="sitemaplite_additional_urls">{$lang->cmd_sitemaplite_additional_urls}</label>

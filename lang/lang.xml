@@ -80,6 +80,10 @@
 		<value xml:lang="ko"><![CDATA[로그인한 사용자만 접근할 수 있는 메뉴는 사이트맵에서 제외합니다.]]></value>
 		<value xml:lang="en"><![CDATA[Menus that are only accessible to members will be excluded from the sitemap.]]></value>
 	</item>
+	<item name="cmd_sitemaplite_about_mid_exclusions">
+		<value xml:lang="ko"><![CDATA[메뉴 중에서 제외하고 싶은 것이 있다면, 메뉴 ID를 한 줄에 하나씩 입력하여 주십시오.]]></value>
+		<value xml:lang="en"><![CDATA[If you want to exclude specific menus, write the menu ID here one per line.]]></value>
+	</item>
 	<item name="cmd_sitemaplite_about_additional_urls">
 		<value xml:lang="ko"><![CDATA[메뉴에 포함된 주소 외에 추가로 등록할 주소가 있다면 한 줄에 하나씩 입력하여 주십시오.<br>다른 도메인의 주소는 등록할 수 없습니다.]]></value>
 		<value xml:lang="en"><![CDATA[If you have any other addresses to add, please write them one in each line.<br>Please note that addresses belonging to other domains will not be accepted.]]></value>
@@ -135,6 +139,10 @@
 	<item name="cmd_sitemaplite_order_vote">
 		<value xml:lang="ko"><![CDATA[추천수 상위]]></value>
 		<value xml:lang="en"><![CDATA[Most upvoted]]></value>
+	</item>
+	<item name="cmd_sitemaplite_mid_exclusions">
+		<value xml:lang="ko"><![CDATA[제외할 메뉴 ID]]></value>
+		<value xml:lang="en"><![CDATA[Exclusion Menu ID]]></value>
 	</item>
 	<item name="cmd_sitemaplite_additional_urls">
 		<value xml:lang="ko"><![CDATA[추가 등록할 주소]]></value>
